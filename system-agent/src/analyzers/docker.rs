@@ -6,7 +6,7 @@ use std::fs;
 use std::path::{Path, PathBuf};
 
 use crate::models::{ContainerConfig, PortMapping, ResourceLimits, VolumeMount};
-// use crate::parsers::dockerfile::parse_dockerfile;
+use crate::parsers::docker::parse_dockerfile;
 
 /// Анализатор Docker/Podman конфигураций
 pub struct DockerAnalyzer {
@@ -58,22 +58,22 @@ impl DockerAnalyzer {
         let dockerfiles = self.find_dockerfiles()?;
         for file_path in dockerfiles {
             debug!("Анализ Dockerfile: {}", file_path.display());
-            // match parse_dockerfile(&file_path) {
-            //     Ok(container_config) => {
-            //         debug!(
-            //             "Обнаружена конфигурация контейнера в файле {}",
-            //             file_path.display()
-            //         );
-            //         configs.push(container_config);
-            //     }
-            //     Err(e) => {
-            //         warn!(
-            //             "Ошибка при анализе Dockerfile {}: {}",
-            //             file_path.display(),
-            //             e
-            //         );
-            //     }
-            // }
+            match parse_dockerfile(&file_path) {
+                Ok(container_config) => {
+                    debug!(
+                        "Обнаружена конфигурация контейнера в файле {}",
+                        file_path.display()
+                    );
+                    configs.push(container_config);
+                }
+                Err(e) => {
+                    warn!(
+                        "Ошибка при анализе Dockerfile {}: {}",
+                        file_path.display(),
+                        e
+                    );
+                }
+            }
         }
 
         // Удаление дубликатов и нормализация

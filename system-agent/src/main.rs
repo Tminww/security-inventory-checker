@@ -6,7 +6,7 @@ use std::path::PathBuf;
 use std::time::Duration;
 use tokio::time;
 
-// use crate::system_agent::collector::{Collector, CollectorConfig};
+use crate::system_agent::collector::{Collector, CollectorConfig};
 use system_agent::communication::client::Client;
 
 #[derive(Parser, Debug)]

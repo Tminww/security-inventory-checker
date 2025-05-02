@@ -38,6 +38,11 @@ impl Default for AgentData {
 
 #[derive(Debug, Serialize, Deserialize, Clone, Default)]
 pub struct SystemInfo {
+    pub hostname: String,
+    pub os_name: String,
+    pub cpu_model: String,
+    pub cpu_cores: u32,
+    pub boot_time: DateTime<Utc>,
     /// Версия ОС
     pub os_version: String,
     /// Версия ядра
