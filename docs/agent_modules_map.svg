@@ -1,0 +1,208 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Стили -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555" />
+    </marker>
+    <linearGradient id="agentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e6f7ff" />
+      <stop offset="100%" stop-color="#bae7ff" />
+    </linearGradient>
+    <linearGradient id="staticGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f9f0ff" />
+      <stop offset="100%" stop-color="#efdbff" />
+    </linearGradient>
+    <linearGradient id="runtimeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff2e8" />
+      <stop offset="100%" stop-color="#ffd8bf" />
+    </linearGradient>
+    <linearGradient id="commGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6ffed" />
+      <stop offset="100%" stop-color="#d9f7be" />
+    </linearGradient>
+    <linearGradient id="rustGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff7e6" />
+      <stop offset="100%" stop-color="#ffe7ba" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Заголовок -->
+  <text x="450" y="30" font-family="Arial" font-size="22" text-anchor="middle" font-weight="bold">Агенты и модули сбора данных</text>
+  
+  <!-- Главный Агент -->
+  <g id="main_agent">
+    <rect x="300" y="60" width="300" height="80" rx="10" ry="10" fill="url(#agentGradient)" stroke="#1890ff" stroke-width="3" />
+    <text x="450" y="100" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold">Агент на хосте (Rust)</text>
+    <text x="450" y="125" font-family="Arial" font-size="12" text-anchor="middle" font-style="italic">Интеграция модулей и управление</text>
+  </g>
+  
+  <!-- Модули сбора данных -->
+  <!-- 1. Статический анализ -->
+  <g id="static_analyzer">
+    <rect x="50" y="200" width="250" height="60" rx="10" ry="10" fill="url(#staticGradient)" stroke="#722ed1" stroke-width="2" />
+    <text x="175" y="235" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Модуль статического анализа</text>
+    
+    <!-- Подмодули -->
+    <rect x="40" y="280" width="270" height="200" rx="5" ry="5" fill="#f9f9f9" stroke="#d9d9d9" stroke-width="1" />
+    
+    <rect x="60" y="300" width="230" height="40" rx="5" ry="5" fill="#ffffff" stroke="#722ed1" stroke-width="1" />
+    <text x="175" y="325" font-family="Arial" font-size="14" text-anchor="middle">Docker/Podman анализатор</text>
+    
+    <rect x="60" y="350" width="230" height="40" rx="5" ry="5" fill="#ffffff" stroke="#722ed1" stroke-width="1" />
+    <text x="175" y="375" font-family="Arial" font-size="14" text-anchor="middle">Systemd юнит-сканер</text>
+    
+    <rect x="60" y="400" width="230" height="40" rx="5" ry="5" fill="#ffffff" stroke="#722ed1" stroke-width="1" />
+    <text x="175" y="425" font-family="Arial" font-size="14" text-anchor="middle">Iptables/nftables парсер</text>
+    
+    <!-- Rust crates -->
+    <rect x="80" y="460" width="190" height="140" rx="5" ry="5" fill="url(#rustGradient)" stroke="#fa8c16" stroke-width="1" />
+    <text x="175" y="480" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Rust crates</text>
+    
+    <rect x="100" y="490" width="150" height="25" rx="3" ry="3" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="175" y="507" font-family="Arial" font-size="11" text-anchor="middle">serde_yaml</text>
+    
+    <rect x="100" y="525" width="150" height="25" rx="3" ry="3" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="175" y="542" font-family="Arial" font-size="11" text-anchor="middle">serde_json</text>
+    
+    <rect x="100" y="560" width="150" height="25" rx="3" ry="3" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="175" y="577" font-family="Arial" font-size="11" text-anchor="middle">systemd (API)</text>
+  </g>
+  
+  <!-- 2. Анализ рантайма -->
+  <g id="runtime_analyzer">
+    <rect x="325" y="200" width="250" height="60" rx="10" ry="10" fill="url(#runtimeGradient)" stroke="#fa8c16" stroke-width="2" />
+    <text x="450" y="235" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Монитор рантайма</text>
+    
+    <!-- Подмодули -->
+    <rect x="315" y="280" width="270" height="280" rx="5" ry="5" fill="#f9f9f9" stroke="#d9d9d9" stroke-width="1" />
+    
+    <rect x="335" y="300" width="230" height="40" rx="5" ry="5" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="450" y="325" font-family="Arial" font-size="14" text-anchor="middle">eBPF трейсер</text>
+    
+    <rect x="335" y="350" width="230" height="40" rx="5" ry="5" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="450" y="375" font-family="Arial" font-size="14" text-anchor="middle">Сетевой монитор (ss/netstat)</text>
+    
+    <rect x="335" y="400" width="230" height="40" rx="5" ry="5" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="450" y="425" font-family="Arial" font-size="14" text-anchor="middle">Журнал системы (journald)</text>
+    
+    <rect x="335" y="450" width="230" height="40" rx="5" ry="5" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="450" y="475" font-family="Arial" font-size="14" text-anchor="middle">Prometheus/метрики</text>
+    
+    <!-- Rust crates -->
+    <rect x="355" y="510" width="190" height="140" rx="5" ry="5" fill="url(#rustGradient)" stroke="#fa8c16" stroke-width="1" />
+    <text x="450" y="530" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Rust crates</text>
+    
+    <rect x="375" y="540" width="150" height="25" rx="3" ry="3" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="450" y="557" font-family="Arial" font-size="11" text-anchor="middle">aya (eBPF)</text>
+    
+    <rect x="375" y="575" width="150" height="25" rx="3" ry="3" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="450" y="592" font-family="Arial" font-size="11" text-anchor="middle">nix/syscall</text>
+    
+    <rect x="375" y="610" width="150" height="25" rx="3" ry="3" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="450" y="627" font-family="Arial" font-size="11" text-anchor="middle">systemd-journal</text>
+  </g>
+  
+  <!-- 3. Коммуникационный модуль -->
+  <g id="comm_module">
+    <rect x="600" y="200" width="250" height="60" rx="10" ry="10" fill="url(#commGradient)" stroke="#52c41a" stroke-width="2" />
+    <text x="725" y="235" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Коммуникационный модуль</text>
+    
+    <!-- Подмодули -->
+    <rect x="590" y="280" width="270" height="200" rx="5" ry="5" fill="#f9f9f9" stroke="#d9d9d9" stroke-width="1" />
+    
+    <rect x="610" y="300" width="230" height="40" rx="5" ry="5" fill="#ffffff" stroke="#52c41a" stroke-width="1" />
+    <text x="725" y="325" font-family="Arial" font-size="14" text-anchor="middle">gRPC клиент</text>
+    
+    <rect x="610" y="350" width="230" height="40" rx="5" ry="5" fill="#ffffff" stroke="#52c41a" stroke-width="1" />
+    <text x="725" y="375" font-family="Arial" font-size="14" text-anchor="middle">HTTP(s) клиент</text>
+    
+    <rect x="610" y="400" width="230" height="40" rx="5" ry="5" fill="#ffffff" stroke="#52c41a" stroke-width="1" />
+    <text x="725" y="425" font-family="Arial" font-size="14" text-anchor="middle">TLS/безопасность</text>
+    
+    <!-- Rust crates -->
+    <rect x="630" y="460" width="190" height="140" rx="5" ry="5" fill="url(#rustGradient)" stroke="#fa8c16" stroke-width="1" />
+    <text x="725" y="480" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Rust crates</text>
+    
+    <rect x="650" y="490" width="150" height="25" rx="3" ry="3" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="725" y="507" font-family="Arial" font-size="11" text-anchor="middle">tonic (gRPC)</text>
+    
+    <rect x="650" y="525" width="150" height="25" rx="3" ry="3" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="725" y="542" font-family="Arial" font-size="11" text-anchor="middle">reqwest/hyper</text>
+    
+    <rect x="650" y="560" width="150" height="25" rx="3" ry="3" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="725" y="577" font-family="Arial" font-size="11" text-anchor="middle">rustls</text>
+  </g>
+  
+  <!-- Связи модулей с агентом -->
+  <path d="M 300 100 L 175 160 L 175 200" stroke="#722ed1" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 450 140 L 450 200" stroke="#fa8c16" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 600 100 L 725 160 L 725 200" stroke="#52c41a" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- Связи между модулями -->
+  <path d="M 175 510 C 175 610 175 640 325 640 L 450 640 L 450 590" stroke="#555" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrowhead)" />
+  <text x="250" y="650" font-family="Arial" font-size="10" text-anchor="middle">Зависимости от библиотек</text>
+  
+  <path d="M 450 510 C 450 650 700 650 725 610" stroke="#555" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrowhead)" />
+  <text x="580" y="660" font-family="Arial" font-size="10" text-anchor="middle">Интеграция модулей</text>
+  
+  <!-- Потоки данных -->
+  <g id="data_flow">
+    <rect x="30" y="30" width="230" height="140" rx="5" ry="5" fill="#f8f8f8" stroke="#8c8c8c" stroke-width="1" />
+    <text x="145" y="50" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Источники данных (статика)</text>
+    
+    <rect x="45" y="65" width="200" height="20" rx="3" ry="3" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="145" y="80" font-family="Arial" font-size="10" text-anchor="middle">docker-compose.yml</text>
+    
+    <rect x="45" y="90" width="200" height="20" rx="3" ry="3" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="145" y="105" font-family="Arial" font-size="10" text-anchor="middle">Dockerfile</text>
+    
+    <rect x="45" y="115" width="200" height="20" rx="3" ry="3" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="145" y="130" font-family="Arial" font-size="10" text-anchor="middle">systemd unit-файлы</text>
+    
+    <rect x="45" y="140" width="200" height="20" rx="3" ry="3" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="145" y="155" font-family="Arial" font-size="10" text-anchor="middle">iptables/nft конфигурации</text>
+  </g>
+  
+  <g id="runtime_data">
+    <rect x="640" y="30" width="230" height="140" rx="5" ry="5" fill="#f8f8f8" stroke="#8c8c8c" stroke-width="1" />
+    <text x="755" y="50" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Источники данных (рантайм)</text>
+    
+    <rect x="655" y="65" width="200" height="20" rx="3" ry="3" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="755" y="80" font-family="Arial" font-size="10" text-anchor="middle">Системные вызовы (через eBPF)</text>
+    
+    <rect x="655" y="90" width="200" height="20" rx="3" ry="3" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="755" y="105" font-family="Arial" font-size="10" text-anchor="middle">Процессы и соединения (netstat)</text>
+    
+    <rect x="655" y="115" width="200" height="20" rx="3" ry="3" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="755" y="130" font-family="Arial" font-size="10" text-anchor="middle">Логи (journald/systemd)</text>
+    
+    <rect x="655" y="140" width="200" height="20" rx="3" ry="3" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="755" y="155" font-family="Arial" font-size="10" text-anchor="middle">Docker/Podman API</text>
+  </g>
+  
+  <!-- Связи источников данных с модулями -->
+  <path d="M 170 170 L 170 280" stroke="#722ed1" stroke-width="1.5" stroke-dasharray="4,2" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 750 170 L 750 230 C 750 250 650 250 585 320" stroke="#fa8c16" stroke-width="1.5" stroke-dasharray="4,2" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- Выход в систему -->
+  <g id="output">
+    <rect x="600" y="630" width="240" height="50" rx="10" ry="10" fill="#f0f0f0" stroke="#8c8c8c" stroke-width="2" />
+    <text x="720" y="660" font-family="Arial" font-size="14" text-anchor="middle">Данные отправляются на сервер</text>
+    
+    <path d="M 725 600 L 725 630" stroke="#52c41a" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  </g>
+  
+  <!-- Детали модулей -->
+  <g id="ebpf_details">
+    <rect x="40" y="630" width="240" height="50" rx="5" ry="5" fill="#fffbe6" stroke="#faad14" stroke-width="1" />
+    <text x="160" y="650" font-family="Arial" font-size="11" text-anchor="middle" font-weight="bold">eBPF трейсинг</text>
+    <text x="160" y="670" font-family="Arial" font-size="9" text-anchor="middle">Отслеживание системных вызовов и сетевых</text>
+    <text x="160" y="680" font-family="Arial" font-size="9" text-anchor="middle">соединений на уровне ядра Linux</text>
+  </g>
+  
+  <g id="journald_details">
+    <rect x="330" y="670" width="240" height="50" rx="5" ry="5" fill="#fffbe6" stroke="#faad14" stroke-width="1" />
+    <text x="450" y="690" font-family="Arial" font-size="11" text-anchor="middle" font-weight="bold">Журнал системы (journald)</text>
+    <text x="450" y="710" font-family="Arial" font-size="9" text-anchor="middle">Сбор и анализ логов системы и сервисов</text>
+  </g>
+</svg>

@@ -1,0 +1,178 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555" />
+    </marker>
+    <linearGradient id="hostGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e6f7ff" />
+      <stop offset="100%" stop-color="#bae7ff" />
+    </linearGradient>
+    <linearGradient id="serverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6ffed" />
+      <stop offset="100%" stop-color="#d9f7be" />
+    </linearGradient>
+    <linearGradient id="dbGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff2e8" />
+      <stop offset="100%" stop-color="#ffd8bf" />
+    </linearGradient>
+    <linearGradient id="analysisGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f9f0ff" />
+      <stop offset="100%" stop-color="#efdbff" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Автоматическая система инвентаризации и анализа безопасности</text>
+  
+  <!-- Host Nodes -->
+  <g id="host1">
+    <rect x="50" y="100" width="200" height="220" rx="10" ry="10" fill="url(#hostGradient)" stroke="#1890ff" stroke-width="2" />
+    <text x="150" y="125" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Агент на хосте 1</text>
+    
+    <!-- Agent Modules -->
+    <rect x="70" y="140" width="160" height="30" rx="5" ry="5" fill="#ffffff" stroke="#1890ff" stroke-width="1" />
+    <text x="150" y="160" font-family="Arial" font-size="12" text-anchor="middle">Сканер статики</text>
+    
+    <rect x="70" y="180" width="160" height="30" rx="5" ry="5" fill="#ffffff" stroke="#1890ff" stroke-width="1" />
+    <text x="150" y="200" font-family="Arial" font-size="12" text-anchor="middle">Монитор рантайма</text>
+    
+    <rect x="70" y="220" width="160" height="30" rx="5" ry="5" fill="#ffffff" stroke="#1890ff" stroke-width="1" />
+    <text x="150" y="240" font-family="Arial" font-size="12" text-anchor="middle">eBPF-трейсинг</text>
+    
+    <rect x="70" y="260" width="160" height="40" rx="5" ry="5" fill="#ffffff" stroke="#1890ff" stroke-width="1" />
+    <text x="150" y="280" font-family="Arial" font-size="12" text-anchor="middle">Коммуникационный</text>
+    <text x="150" y="290" font-family="Arial" font-size="12" text-anchor="middle">модуль</text>
+  </g>
+  
+  <g id="host2">
+    <rect x="50" y="350" width="200" height="220" rx="10" ry="10" fill="url(#hostGradient)" stroke="#1890ff" stroke-width="2" opacity="0.7" />
+    <text x="150" y="375" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Агент на хосте 2</text>
+    
+    <!-- Agent Modules -->
+    <rect x="70" y="390" width="160" height="30" rx="5" ry="5" fill="#ffffff" stroke="#1890ff" stroke-width="1" />
+    <text x="150" y="410" font-family="Arial" font-size="12" text-anchor="middle">Сканер статики</text>
+    
+    <rect x="70" y="430" width="160" height="30" rx="5" ry="5" fill="#ffffff" stroke="#1890ff" stroke-width="1" />
+    <text x="150" y="450" font-family="Arial" font-size="12" text-anchor="middle">Монитор рантайма</text>
+    
+    <rect x="70" y="470" width="160" height="30" rx="5" ry="5" fill="#ffffff" stroke="#1890ff" stroke-width="1" />
+    <text x="150" y="490" font-family="Arial" font-size="12" text-anchor="middle">eBPF-трейсинг</text>
+    
+    <rect x="70" y="510" width="160" height="40" rx="5" ry="5" fill="#ffffff" stroke="#1890ff" stroke-width="1" />
+    <text x="150" y="530" font-family="Arial" font-size="12" text-anchor="middle">Коммуникационный</text>
+    <text x="150" y="540" font-family="Arial" font-size="12" text-anchor="middle">модуль</text>
+  </g>
+  
+  <!-- Central Server -->
+  <g id="server">
+    <rect x="350" y="230" width="200" height="140" rx="10" ry="10" fill="url(#serverGradient)" stroke="#52c41a" stroke-width="2" />
+    <text x="450" y="255" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Центральный сервер</text>
+    
+    <rect x="370" y="270" width="160" height="30" rx="5" ry="5" fill="#ffffff" stroke="#52c41a" stroke-width="1" />
+    <text x="450" y="290" font-family="Arial" font-size="12" text-anchor="middle">API-сервер</text>
+    
+    <rect x="370" y="310" width="160" height="40" rx="5" ry="5" fill="#ffffff" stroke="#52c41a" stroke-width="1" />
+    <text x="450" y="330" font-family="Arial" font-size="12" text-anchor="middle">Обработка и</text>
+    <text x="450" y="340" font-family="Arial" font-size="12" text-anchor="middle">нормализация данных</text>
+  </g>
+  
+  <!-- Database -->
+  <g id="database">
+    <rect x="600" y="230" width="170" height="140" rx="10" ry="10" fill="url(#dbGradient)" stroke="#fa8c16" stroke-width="2" />
+    <text x="685" y="255" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">PostgreSQL</text>
+    
+    <rect x="620" y="270" width="130" height="20" rx="5" ry="5" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="685" y="285" font-family="Arial" font-size="10" text-anchor="middle">hosts</text>
+    
+    <rect x="620" y="295" width="130" height="20" rx="5" ry="5" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="685" y="310" font-family="Arial" font-size="10" text-anchor="middle">containers</text>
+    
+    <rect x="620" y="320" width="130" height="20" rx="5" ry="5" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="685" y="335" font-family="Arial" font-size="10" text-anchor="middle">services</text>
+    
+    <rect x="620" y="345" width="130" height="20" rx="5" ry="5" fill="#ffffff" stroke="#fa8c16" stroke-width="1" />
+    <text x="685" y="360" font-family="Arial" font-size="10" text-anchor="middle">connections</text>
+  </g>
+  
+  <!-- Analysis Module -->
+  <g id="analysis">
+    <rect x="475" y="80" width="200" height="100" rx="10" ry="10" fill="url(#analysisGradient)" stroke="#722ed1" stroke-width="2" />
+    <text x="575" y="105" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Модуль аналитики</text>
+    
+    <rect x="495" y="120" width="160" height="30" rx="5" ry="5" fill="#ffffff" stroke="#722ed1" stroke-width="1" />
+    <text x="575" y="140" font-family="Arial" font-size="12" text-anchor="middle">Анализатор безопасности</text>
+  </g>
+  
+  <!-- Connections -->
+  <!-- Host1 to Server -->
+  <path d="M 250 280 L 350 280" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="300" y="270" font-family="Arial" font-size="10" text-anchor="middle">gRPC/HTTPS</text>
+  
+  <!-- Host2 to Server -->
+  <path d="M 250 500 L 300 500 L 300 330 L 350 330" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="270" y="490" font-family="Arial" font-size="10" text-anchor="middle">gRPC/HTTPS</text>
+  
+  <!-- Server to Database -->
+  <path d="M 550 300 L 600 300" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="575" y="290" font-family="Arial" font-size="10" text-anchor="middle">SQL</text>
+  
+  <!-- Database to Analysis -->
+  <path d="M 685 230 L 685 180 L 575 180 L 575 180" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="650" y="195" font-family="Arial" font-size="10" text-anchor="middle">Запросы</text>
+  
+  <!-- Analysis to Server -->
+  <path d="M 475 130 L 400 130 L 400 230" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="425" y="150" font-family="Arial" font-size="10" text-anchor="middle">Оповещения</text>
+  
+  <!-- Data Sources -->
+  <g id="data_sources">
+    <rect x="270" y="400" width="250" height="180" rx="10" ry="10" fill="#f0f0f0" stroke="#8c8c8c" stroke-width="1" />
+    <text x="395" y="420" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Источники данных на хостах</text>
+    
+    <rect x="290" y="435" width="100" height="25" rx="5" ry="5" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="340" y="452" font-family="Arial" font-size="10" text-anchor="middle">docker-compose</text>
+    
+    <rect x="400" y="435" width="100" height="25" rx="5" ry="5" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="450" y="452" font-family="Arial" font-size="10" text-anchor="middle">systemd unit-файлы</text>
+    
+    <rect x="290" y="470" width="100" height="25" rx="5" ry="5" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="340" y="487" font-family="Arial" font-size="10" text-anchor="middle">iptables конфиги</text>
+    
+    <rect x="400" y="470" width="100" height="25" rx="5" ry="5" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="450" y="487" font-family="Arial" font-size="10" text-anchor="middle">Docker/Podman API</text>
+    
+    <rect x="290" y="505" width="100" height="25" rx="5" ry="5" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="340" y="522" font-family="Arial" font-size="10" text-anchor="middle">eBPF события</text>
+    
+    <rect x="400" y="505" width="100" height="25" rx="5" ry="5" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="450" y="522" font-family="Arial" font-size="10" text-anchor="middle">netstat/ss/ps</text>
+    
+    <rect x="290" y="540" width="100" height="25" rx="5" ry="5" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="340" y="557" font-family="Arial" font-size="10" text-anchor="middle">journald логи</text>
+    
+    <rect x="400" y="540" width="100" height="25" rx="5" ry="5" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="450" y="557" font-family="Arial" font-size="10" text-anchor="middle">Prometheus метрики</text>
+  </g>
+  
+  <!-- Connection from Data Sources to Hosts -->
+  <path d="M 270 490 L 250 490" stroke="#555" stroke-width="1" stroke-dasharray="4,2" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- Legend -->
+  <g id="legend" transform="translate(600, 420)">
+    <rect x="0" y="0" width="180" height="120" rx="5" ry="5" fill="#ffffff" stroke="#8c8c8c" stroke-width="1" />
+    <text x="90" y="20" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Легенда</text>
+    
+    <rect x="10" y="30" width="20" height="20" fill="url(#hostGradient)" stroke="#1890ff" stroke-width="1" />
+    <text x="40" y="45" font-family="Arial" font-size="10" text-anchor="start">Агенты на хостах</text>
+    
+    <rect x="10" y="55" width="20" height="20" fill="url(#serverGradient)" stroke="#52c41a" stroke-width="1" />
+    <text x="40" y="70" font-family="Arial" font-size="10" text-anchor="start">Центральный сервер</text>
+    
+    <rect x="10" y="80" width="20" height="20" fill="url(#dbGradient)" stroke="#fa8c16" stroke-width="1" />
+    <text x="40" y="95" font-family="Arial" font-size="10" text-anchor="start">База данных</text>
+    
+    <rect x="10" y="105" width="20" height="20" fill="url(#analysisGradient)" stroke="#722ed1" stroke-width="1" />
+    <text x="40" y="120" font-family="Arial" font-size="10" text-anchor="start">Аналитика</text>
+  </g>
+</svg>
