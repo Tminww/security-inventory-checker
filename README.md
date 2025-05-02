@@ -1,7 +1,5 @@
-```markdown
-![Concept Map](docs/consept_map.svg)
-```
+![Alt text](./docs/concept_map.svg)
+<img src="./docs/concept_map.svg">
 
-```markdown
-![Concept Agent Map](docs/agent_modules_map.svg)
-```
+![Alt text](./docs/agent_modules_map.svg)
+<img src="./docs/agent_modules_map.svg">

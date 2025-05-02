@@ -1,7 +1,6 @@
 [workspace]
 members = [
-    "common",
-    "inventory-agent",
+    "system-agent",
     "server"
 ]
 resolver = "2"
